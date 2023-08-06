@@ -2,21 +2,22 @@
 # define WRONG_ANIMAL_HPP
 
 #include <iostream>
+#include <string>
 
-class WrongAnimal 
+class WrongAnimal
 {
     protected:
         std::string     _type;
 
     public:
         WrongAnimal();
-        WrongAnimal( const WrongAnimal & src );
-        ~WrongAnimal(void);
+        WrongAnimal( WrongAnimal & src );
+        virtual ~WrongAnimal(void);
 
         WrongAnimal  &operator=( const WrongAnimal & ref );
 
-        void    makeSound();
-        std::string getType();
+        virtual void    makeSound( void ) const;
+        std::string getType( void ) const;
 
 };
 

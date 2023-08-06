@@ -1,4 +1,4 @@
-NAME = claptrap
+NAME = animal
 CXX = c++
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 

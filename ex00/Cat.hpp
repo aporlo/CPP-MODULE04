@@ -1,7 +1,7 @@
 #ifndef CAT_HPP
 # define CAT_HPP
 
-#include <iostream>
+#include "Animal.hpp"
 
 class Cat : public Animal
 {
@@ -9,13 +9,13 @@ class Cat : public Animal
         std::string     _type;
 
     public:
-        Cat();
-        Cat( const Animal & src );
+        Cat( void );
+        Cat( Cat & src );
         ~Cat(void);
 
         Cat  &operator=( const Cat & ref );
 
-        void    makeSound();
+        virtual void    makeSound( void ) const;
         std::string getType();
 
 };

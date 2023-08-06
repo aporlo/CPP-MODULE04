@@ -1,7 +1,7 @@
 #ifndef DOG_HPP
 # define DOG_HPP
 
-#include <iostream>
+#include "Animal.hpp"
 
 class Dog : public Animal
 {
@@ -9,14 +9,14 @@ class Dog : public Animal
         std::string     _type;
 
     public:
-        Dog();
-        Dog( const Dog & src );
+        Dog( void );
+        Dog( Dog & src );
         ~Dog(void);
 
         Dog  &operator=( const Dog & ref );
 
-        void    makeSound();
-        std::string getType();
+        virtual void    makeSound( void ) const;
+        // std::string getType();
 
 };
 

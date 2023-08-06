@@ -1,7 +1,7 @@
 #ifndef WRONG_CAT_HPP
 # define WRONG_CAT_HPP
 
-#include <iostream>
+#include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal
 {
@@ -10,12 +10,12 @@ class WrongCat : public WrongAnimal
 
     public:
         WrongCat();
-        WrongCat( const WrongAnimal & src );
+        WrongCat( WrongCat & src );
         ~WrongCat(void);
 
         WrongCat  &operator=( const WrongCat & ref );
 
-        void    makeSound();
+       virtual void    makeSound( void ) const;
         std::string getType();
 
 };

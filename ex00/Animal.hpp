@@ -10,13 +10,13 @@ class Animal
 
     public:
         Animal();
-        Animal( const Animal & src );
-        ~Animal(void);
+        Animal( Animal & src );
+        virtual ~Animal(void);
 
         Animal  &operator=( const Animal & ref );
 
-        void    makeSound();
-        std::string getType();
+        virtual void    makeSound( void ) const;
+        std::string getType( void ) const;
 
 };
 

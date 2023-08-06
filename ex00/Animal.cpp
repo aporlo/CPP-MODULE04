@@ -4,8 +4,9 @@ Animal::Animal(){
     std::cout << "Animal constructor called" << std::endl;
 }
 
-Animal::Animal( Animal const & src)
+Animal::Animal( Animal & src)
 {
+    std::cout <<"Copy constructor for Animal called" << std::endl;
     this->_type = src._type;
 }
 
@@ -22,12 +23,12 @@ Animal & Animal::operator=( Animal const & ref)
     return (*this);
 }
 
-void    Animal::makeSound()
+void    Animal::makeSound( void ) const
 {
-    std::cout << "Animal::[none]" << std::endl;
+    std::cout << "Animal : none " << std::endl;
 }
 
-std::string Animal::getType()
+std::string Animal::getType( void ) const
 {
-    return this->_type = _type;
+    return this->_type;
 }
