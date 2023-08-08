@@ -13,8 +13,8 @@ class Cat : public Animal
         Cat( Cat & src );
         ~Cat(void);
 
-        Cat & operator=(const Cat & ref);
-
+        Cat & operator=(Cat & ref);
+        std::string getType( void ) const;
         virtual void    makeSound( void ) const;
 };
 

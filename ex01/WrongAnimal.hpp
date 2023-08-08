@@ -12,7 +12,7 @@ class WrongAnimal
     public:
         WrongAnimal();
         WrongAnimal( WrongAnimal & src );
-        virtual ~WrongAnimal(void);
+        ~WrongAnimal(void);
 
         WrongAnimal  &operator=( const WrongAnimal & ref );
 

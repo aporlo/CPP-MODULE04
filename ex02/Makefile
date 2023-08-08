@@ -1,4 +1,4 @@
-NAME = animals
+NAME = abstractClass
 CXX = c++
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 

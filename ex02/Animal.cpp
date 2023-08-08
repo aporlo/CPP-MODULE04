@@ -1,6 +1,11 @@
 #include "Animal.hpp"
 
-Animal::Animal(): _type("")
+Animal::Animal( void ) : _type("")
+{
+    std::cout << "Animal Defual constructor called" << std::endl;
+}
+
+Animal::Animal( std::string type ) : _type(type)
 {
     std::cout << "Animal constructor called" << std::endl;
 }
@@ -8,7 +13,7 @@ Animal::Animal(): _type("")
 Animal::Animal( Animal & src)
 {
     std::cout <<"Copy constructor for Animal called" << std::endl;
-    *this =  src;
+    this->_type = src._type;
 }
 
 Animal::~Animal( void )
@@ -16,11 +21,12 @@ Animal::~Animal( void )
     std::cout << "Animal Destructor called" << std::endl;
 }
 
-Animal & Animal::operator=( Animal & ref)
+Animal & Animal::operator=( Animal const & ref)
 {
     std::cout << "Animal assignment operator called" << std::endl;
-	this->_type = ref.getType();
-	return (*this);
+    if (this != &ref)
+        *this = ref;
+    return (*this);
 }
 
 void    Animal::makeSound( void ) const

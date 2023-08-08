@@ -18,14 +18,20 @@ Cat::~Cat(void)
 	return;
 }
 
-Cat & Cat::operator=(const Cat & ref)
+Cat & Cat::operator=(Cat & ref)
 {
 	std::cout << "Cat assignment operator called" << std::endl;
-	this->_type = ref.getType();
+	if (this != &ref)
+		this->_type = ref.getType();
 	return (*this);
 }
 
 void	Cat::makeSound( void ) const
 {
 	std::cout	<< " meow meow " << std::endl;
+}
+
+std::string Cat::getType( void ) const
+{
+    return this->_type;
 }

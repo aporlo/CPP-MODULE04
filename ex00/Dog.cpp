@@ -2,7 +2,7 @@
 
 Dog::Dog( void )
 {
-	_type = "Dog";
+	this->_type = "Dog";
 	std::cout << "Dog constructor called" << std::endl;
 }
 
@@ -19,14 +19,20 @@ Dog::~Dog(void)
 	return;
 }
 
-Dog & Dog::operator=(Dog const & ref)
+Dog & Dog::operator=(Dog & ref)
 {
 	std::cout << "Dog assignment operator called" << std::endl;
-	_type = ref.getType();
+	if (this != &ref)
+		this->_type = ref.getType();
 	return (*this);
 }
 
 void	Dog::makeSound( void ) const
 {
 	std::cout	<< " bark bark " << std::endl;
+}
+
+std::string Dog::getType( void ) const
+{
+    return this->_type;
 }
