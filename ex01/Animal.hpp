@@ -11,7 +11,7 @@ class Animal
 
     public:
         Animal( void );
-        Animal( Animal & src );
+        Animal( Animal const & src );
         virtual ~Animal(void);
 
         Animal  &operator=( const Animal & ref );

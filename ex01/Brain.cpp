@@ -5,7 +5,7 @@ Brain::Brain( void )
 	std::cout << "Brain constructor called" << std::endl;
 }
 
-Brain::Brain( Brain & src )
+Brain::Brain( Brain const & src )
 {
 	std::cout << "Copy constructor for Brain called" << std::endl;
 	*this = src;
@@ -30,5 +30,10 @@ std::string	&Brain::getIdea(int i)
 {
 	if (i < 100 && i >= 0)
 		return (this->_ideas[i]);
-	return (this->_ideas[0]);
+	return (this->_ideas[i % 99]);
+}
+
+void  Brain::setIdea(int i, std::string const &src)
+{
+	this->_ideas[i] = src;
 }

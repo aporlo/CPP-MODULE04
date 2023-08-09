@@ -5,7 +5,7 @@ WrongAnimal::WrongAnimal()
 	std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal( WrongAnimal & src)
+WrongAnimal::WrongAnimal( WrongAnimal const & src)
 {
 	std::cout <<"Copy constructor for WrongAnimal called" << std::endl;
 	*this = src;

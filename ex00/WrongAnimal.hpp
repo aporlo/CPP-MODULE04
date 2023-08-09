@@ -11,7 +11,7 @@ class WrongAnimal
 
     public:
         WrongAnimal();
-        WrongAnimal( WrongAnimal & src );
+        WrongAnimal( WrongAnimal const & src );
         ~WrongAnimal(void);
 
         WrongAnimal  &operator=( const WrongAnimal & ref );

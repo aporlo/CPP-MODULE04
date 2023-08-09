@@ -10,11 +10,12 @@ class Brain
 
     public:
         Brain( void );
-        Brain( Brain & src );
+        Brain( Brain const & src );
         ~Brain(void);
 
         Brain  &operator=( const Brain & ref );
         std::string &getIdea( int i );
+        void setIdea(int i, std::string const &src);
 };
 
 #endif
